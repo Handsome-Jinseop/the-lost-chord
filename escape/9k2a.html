@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>보물찾기 문제</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    #hint {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #dff0d8;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      color: #3c763d;
+    }
+    #feedback {
+      color: red;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 60%;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>문제 5</h1>
+  <p>하나님께서 애굽 사람들에게 재앙을 내리실 때, 애굽에 있는 이스라엘 자손의 집을 넘으사 구원 한 것을 기념하기 위하여 대대로 지킬 것을 명령하신 하나님의 절기의 이름은 무엇인가요?</p>
+
+  <input type="text" id="answerInput" placeholder="정답을 입력하세요">
+  <br>
+  <button onclick="checkAnswer()">제출</button>
+
+  <div id="feedback"></div>
+
+  <div id="hint">
+    🎉 정답입니다!<br>
+    👉 힌트: "끈이 있으면 좋다. 조용히 진행자앞을 오리걸음으로 지나가 보아라."
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById('answerInput').value.trim();
+      const correctAnswer = "유월절"; // ← 원하는 정답으로 수정 가능
+
+      if (userAnswer === correctAnswer) {
+        document.getElementById('hint').style.display = 'block';
+        document.getElementById('feedback').innerText = '';
+      } else {
+        document.getElementById('feedback').innerText = '정답이 아닙니다. 다시 시도해보세요!';
+        document.getElementById('hint').style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
