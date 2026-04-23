@@ -56,7 +56,7 @@ function checkLocation(placeName) {
       if (d <= ALLOW_DISTANCE) {
         document.getElementById("blocker").classList.add("hidden");
       } else {
-        status.innerText = `목표 지점과 ${Math.round(distance)}m 떨어져 있습니다.`;
+        status.innerText = `목표 지점과 ${Math.round(d)}m 떨어져 있습니다.`;
       }
     },
     () => {
