@@ -34,10 +34,14 @@
       </div>
 
       <input 
-        type="number" 
-        id="group" 
-        class="input" 
+        type="number"
+        id="group"
+        class="input"
         placeholder="예: 1"
+        min="1"
+        max="5"
+        step="1"
+        oninput="this.value = this.value.replace(/[^1-5]/g, '')"
       />
 
       <button class="button" onclick="goNext()">입장하기</button>
@@ -49,18 +53,25 @@
 </div>
 
 <script>
-function goNext() {
-  const group = document.getElementById("group").value.trim();
-  const error = document.getElementById("error");
+  function goNext() {
+    const input = document.getElementById("group");
+    const error = document.getElementById("error");
 
-  if (!group || group <= 0) {
-    error.innerText = "올바른 조 번호를 입력하세요.";
-    return;
+    const value = input.value.trim();
+    const num = Number(value);
+
+    // ❗ 숫자 체크 + 정수 체크 + 범위 체크
+    if (!value || !Number.isInteger(num) || num < 1 || num > 5) {
+      error.innerText = "1~5 사이의 숫자만 입력하세요.";
+      input.focus();
+      return;
+    }
+
+    error.innerText = "";
+
+    // 이동
+    location.href = `G${num}/7vdu.html`;
   }
-
-  // 👉 이동 경로
-  location.href = `G${group}/7vdu.html`;
-}
 </script>
 
 </body>
