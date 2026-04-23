@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>조 선택</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="paper">
+    <div class="content">
+      <p class="maintitle">Introduction</p>
+      <div class="problem-box">
+        <p class="desc">
+          어느 날, 찬양이 멈췄다. 소리가 사라진 것도, 노래가 없어진 것도 아니었다.
+          그저…완전했던 선율이 조각나 버렸다.
+          흩어진 조각들은 각기 다른 모습으로 숨겨졌고, 이제는 서로 알아볼 수조차 없다.
+          “흩어진 것을 다시 이을 수 있다면, 그 선율은 다시 울려 퍼질 것이다.”
+          서로 다른 자리에서 하나의 조각을 마주하게 된다.
+          그리고 그 조각을 통해 조금씩, 잃어버린 찬양에 가까워진다.
+        </p>
+      </div>
+
+      <div class="title">당신의 조를<br>입력하세요</div>
+
+      <div class="subtitle">
+        조별로 다른 경로가 준비되어있습니다.<br>숫자만 입력하세요.
+      </div>
+
+      <input 
+        type="number" 
+        id="group" 
+        class="input" 
+        placeholder="예: 1"
+      />
+
+      <button class="button" onclick="goNext()">입장하기</button>
+
+      <div id="error" class="error"></div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function goNext() {
+  const group = document.getElementById("group").value.trim();
+  const error = document.getElementById("error");
+
+  if (!group || group <= 0) {
+    error.innerText = "올바른 조 번호를 입력하세요.";
+    return;
+  }
+
+  // 👉 이동 경로
+  location.href = `G${group}/7vdu.html`;
+}
+</script>
+
+</body>
+</html>

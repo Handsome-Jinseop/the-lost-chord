@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사라진 음표</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"> 
+</head>
+
+<body>
+
+<!-- 🔒 blocker -->
+<div id="blocker" class="blocker">
+  <h2 id="pin">📍 지정된 장소로 이동하세요</h2>
+
+  <img src="../img/jeonmang.jpg" class="location-image">
+
+  <p>이 장소에 도착하면 다음 문제가 열립니다.</p>
+
+  <button class="location_button" onclick="checkLocation('jeonmang')">위치 확인</button>
+
+  <p id="status"></p>
+</div>
+
+<!-- 🔓 실제 콘텐츠 -->
+<div class="paper">
+    <div class="content">
+
+      <div class="title">사라진 음표</div>
+
+      <div class="desc">
+        남아 있는 것은 틀뿐이다.<br>
+        비어 있는 자리들이 유난히 눈에 띈다.<br>
+        그 빈 곳이 무엇을 의미하는지,<br>
+        그 흐름을 따라가야 한다.<br>
+      </div>
+
+      <div class="problem-box">
+        <img src="../img/note.jpg" class="location-image"><br>
+        도 = 1, 레 = 2, ..., 시 = 7
+      </div>
+
+      <input class="input" id="answer" placeholder="정답을 입력하세요..." />
+
+      <button class="button" onclick="checkAnswer('1354',)">해독하기</button>
+
+      <div class="result" id="result"></div>
+
+  </div>
+</div>
+<script src="../js/main.js"></script>
+<script src="../js/location.js"></script>
+
+</body>
+</html>

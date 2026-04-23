@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>소리가 사라진 찬양</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"> 
+</head>
+
+<body>
+
+<!-- 🔒 blocker -->
+<div id="blocker" class="blocker">
+  <h2 id="pin">📍 지정된 장소로 이동하세요</h2>
+
+  <img src="../img/swing.jpg" class="location-image">
+
+  <p>이 장소에 도착하면 다음 문제가 열립니다.</p>
+
+  <button class="location_button" onclick="checkLocation('swing')">위치 확인</button>
+
+  <p id="status"></p>
+</div>
+
+<!-- 🔓 실제 콘텐츠 -->
+<div class="paper">
+    <div class="content">
+
+      <div class="title">소리가 사라진 찬양</div>
+
+      <div class="desc">
+        아무 소리도 들리지 않는다.<br>
+        그러나 분명 무언가는 흐르고 있다.<br>
+        보이는 것 너머에<br>
+        사라진 것이 남아 있다.<br>
+        ㄱ=1, ㄴ=2, ㄷ=3.....<br>
+      </div>
+
+      <div class="problem-box">
+        <video id="video" width="100%" controls>
+          <source src="../video/dance.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <input class="input" id="answer" placeholder="정답을 입력하세요..." />
+
+      <button class="button" onclick="checkAnswer('9138','../d129.html')">해독하기</button>
+
+      <div class="result" id="result"></div>
+
+  </div>
+</div>
+<script src="../js/main.js"></script>
+<script src="../js/location.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>숨겨진 숫자의 찬양</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css"> 
+</head>
+
+<body>
+
+<!-- 🔒 blocker -->
+<div id="blocker" class="blocker">
+  <h2 id="pin">📍 지정된 장소로 이동하세요</h2>
+
+  <img src="../img/water.jpg" class="location-image">
+
+  <p>이 장소에 도착하면 다음 문제가 열립니다.</p>
+
+  <button class="location_button" onclick="checkLocation('water')">위치 확인</button>
+
+  <p id="status"></p>
+</div>
+
+<!-- 🔓 실제 콘텐츠 -->
+<div class="paper">
+    <div class="content">
+
+      <div class="title">숨겨진 숫자의 찬양</div>
+
+      <div class="desc">
+        익숙한 말들 속에<br>
+        다른 의미가 섞여 있다.<br>
+        그것은 드러나지 않지만,<br>
+        찾는 사람에게는 보인다.<br>
+        <p style="opacity: 0.3;">힌트 : 숫자 2개</p>
+      </div>
+
+      <div class="problem-box">
+        <div class="audio-player">
+          <button id="audioBtn" class="audio-button" onclick="toggleAudio()">▶</button>
+
+          <div class="progress-container" onclick="seek(event)">
+            <div class="progress" id="progress"></div>
+          </div>
+
+          <div class="time">
+            <span id="current">0:00</span> / <span id="duration">0:00</span>
+          </div>
+
+          <audio id="audio" src="../audio/happy.mp3"></audio>
+        </div>
+      </div>
+      <div class="problem-box">
+        <div class="desc">
+          _렌지<br>
+          _일조<br>
+          _론머스크<br>
+          _등학교
+        </div>
+      </div>
+      <div class="problem-box">
+        <div class="desc">
+          이제는 우리가 나갈 시간입니다.<br>
+          분명히 길은 근처에 있습니다.<br>
+          이 분이 지났을지도 모릅니다.<br>
+          십자가를 향해<br>
+          팔을 내밀고 문을 두드리세요.
+        </div>
+      </div>
+
+      <input class="input" id="answer" placeholder="정답을 입력하세요..." />
+
+      <button class="button" onclick="checkAnswer('21','../d129.html')">해독하기</button>
+
+      <div class="result" id="result"></div>
+
+  </div>
+</div>
+<script src="../js/main.js"></script>
+<script src="../js/location.js"></script>
+
+</body>
+</html>
